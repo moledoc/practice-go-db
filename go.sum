@@ -30,6 +30,8 @@ github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742 h1:Esafd1046DLD
 github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742/go.mod h1:bx2lNnkwVCuqBIxFjflWJWanXIb3RllmbCylyMrvgv0=
 github.com/moledoc/check v0.0.0-20220308090837-0aa2c0fc21d4 h1:oKIVBqzH4gFpDINPIOId8fIlcekUWqnRKCW7MTXfy0I=
 github.com/moledoc/check v0.0.0-20220308090837-0aa2c0fc21d4/go.mod h1:iWkoKEj6Z1MydgZvNvNFWS+JI5olcYbnp/PSBkMB4MM=
+github.com/moledoc/practice-go-db/common v0.0.0-20220311094620-2b8f5dba42df h1:akegp4lJXYizebyWK1TB38UHz0HKKlEHTiOns/E1GHg=
+github.com/moledoc/practice-go-db/common v0.0.0-20220311094620-2b8f5dba42df/go.mod h1:jrJ1xw4dE1IQs5WnYVJLMCkPU5Lki/j5Pt/bxDqSk3g=
 github.com/moledoc/templ v0.0.0-20220310130719-90c6296f49fe h1:1seYV73J9zMZLABaG64SQ2F1zPE5ApALXQ7GEWYk3jo=
 github.com/moledoc/templ v0.0.0-20220310130719-90c6296f49fe/go.mod h1:dWTxO4BwlAKzssyjx6gZMouNVw8jcobhjTGVB+6L8Sw=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=

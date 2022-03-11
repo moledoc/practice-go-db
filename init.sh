@@ -2,9 +2,10 @@
 
 set -e
 printf "Creating and running docker container\n"
-sudo docker run --name pg -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=db -p 5432:5432 -v postgre:/data -d postgres:latest
+sudo docker run --name pg -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=db -p 5432:5432 --network prac -v postgre:/data -d postgres:latest
 sleep 3
 printf "Init database ddl\n"
 cd init
 go run init.go
 cd ..
+sudo docker inspect -f '{{.NetworkSettings.Networks.prac.IPAddress}}' pg > .dbip
