@@ -10,6 +10,7 @@ import (
 	"github.com/moledoc/templ"
 	"net/http"
 	"strconv"
+	"net"
 )
 
 var sql_script string
@@ -30,6 +31,15 @@ func addIdname(c *gin.Context) {
 	c.String(http.StatusOK, fmt.Sprintf("Added w/ API: %v,%v\n", id, name))
 }
 
+// Get preferred outbound ip of this machine
+// https://stackoverflow.com/questions/23558425/how-do-i-get-the-local-ip-address-in-go
+func GetOutboundIP() net.IP {
+	conn, err := net.Dial("udp", "8.8.8.8:80")
+	defer conn.Close()
+	check.Err(err)
+	return conn.LocalAddr().(*net.UDPAddr).IP
+}
+
 func main() {
 	fmt.Print("Opening connection to database ")
 	// db, err := sql.Open("postgres", com.Psqlconn)
@@ -45,5 +55,6 @@ func main() {
 	router.GET("/add", addIdname)
 	// sql_script = com.SqlFile("../sql/add_idnames.sql")
 	sql_script = com.SqlFile("/sql/add_idnames.sql")
-	router.Run(":8080")
+	ip := GetOutboundIP()
+	router.Run(ip.String() + ":8080")
 }

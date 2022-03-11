@@ -9,3 +9,4 @@ cd init
 go run init.go
 cd ..
 sudo docker inspect -f '{{.NetworkSettings.Networks.prac.IPAddress}}' pg > .dbip
+go run gen_rest.go
