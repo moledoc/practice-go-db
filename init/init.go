@@ -9,18 +9,16 @@ import (
 )
 
 func main() {
-	psqlconn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", c.Host, c.Port, c.User, c.Password, c.Dbname)
-	db, err := sql.Open("postgres", psqlconn)
+	// psqlconn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", c.Host, c.Port, c.User, c.Password, c.Dbname)
+	db, err := sql.Open("postgres", c.Psqlconn)
 	defer db.Close()
 	check.Err(err)
-
-	err = db.Ping()
-	check.Err(err)
+	check.Err(db.Ping())
 
 	sql := c.SqlFile("ddl/idnames.sql")
 	_, err = db.Exec(sql)
 	check.Err(err)
 
-	fmt.Println("[DONE]: INIT")
+	fmt.Println("DDL: done")
 
 }

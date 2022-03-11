@@ -8,4 +8,3 @@ printf "Init database ddl\n"
 cd init
 go run init.go
 cd ..
-printf "DONE\n"

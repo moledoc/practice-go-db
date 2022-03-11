@@ -11,11 +11,6 @@ import (
 	"time"
 )
 
-type Data struct {
-	Id   int
-	Name string
-}
-
 func Gen(n int) []Data {
 	data := make([]Data, n)
 	for i := 0; i < n; i++ {
@@ -43,11 +38,9 @@ func DataStream(db *sql.DB) {
 
 func main() {
 	rand.Seed(time.Now().UnixNano())
-	psqlconn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", c.Host, c.Port, c.User, c.Password, c.Dbname)
-	db, err := sql.Open("postgres", psqlconn)
+	db, err := sql.Open("postgres", c.Psqlconn)
 	defer db.Close()
 	check.Err(err)
-	err = db.Ping()
-	check.Err(err)
+	check.Err(db.Ping())
 	DataStream(db)
 }
