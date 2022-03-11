@@ -11,11 +11,11 @@ import (
 	"time"
 )
 
-func Gen(n int) []Data {
-	data := make([]Data, n)
+func Gen(n int) []c.Data {
+	data := make([]c.Data, n)
 	for i := 0; i < n; i++ {
 		rnd := rand.Intn(1000)
-		data[i] = Data{Id: rnd, Name: fmt.Sprintf("test%v", rnd)}
+		data[i] = c.Data{Id: rnd, Name: fmt.Sprintf("test%v", rnd)}
 	}
 	return data
 }
