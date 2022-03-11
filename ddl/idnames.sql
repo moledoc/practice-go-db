@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS idnames;
+-- DROP TABLE IF EXISTS idnames;
 CREATE TABLE IF NOT EXISTS idnames (
 	 id       INT
 	,name     VARCHAR(16)

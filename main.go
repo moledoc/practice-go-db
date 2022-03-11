@@ -36,6 +36,7 @@ func dataStream(ch chan data.Data) {
 }
 
 func main() {
+	rand.Seed(time.Now().UnixNano())
 	psqlconn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 	db, err := sql.Open("postgres", psqlconn)
 	defer db.Close()
