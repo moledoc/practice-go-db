@@ -1,6 +1,14 @@
-## TODO:
+## Purpose
 
-Create readme and document go etc programs.
+This repository was used to practice:
+
+* connecting to a db from go;
+* setting up docker containers;
+* rest API.
+
+There won't be very extensive readme about this practice exercise, source code serves that purpose (might add some comments where necessary).
+Also, there are shell scripts to set everything up (and show the necessary commands etc).
+To get this practice exercise up-and-running, see the 'Quick startup' section.
 
 ## Quick startup
 
