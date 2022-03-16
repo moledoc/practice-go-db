@@ -37,7 +37,7 @@ import (
 // }
 
 func printRows(db *sql.DB) {
-	rows, err := db.Query(`select * from idnames`)
+	rows, err := db.Query(`select * from idnames order by created desc limit 11`)
 	defer rows.Close()
 	check.Err(err)
 	fmt.Println("_________________________________________________________________________")
